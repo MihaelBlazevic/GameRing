@@ -16,4 +16,5 @@ Link prototip - https://www.figma.com/proto/mh7XGdkdZN0AfnwLF0TTQT/GameRing-Prot
 
 Zaduženja
 Mihael Blažević - Izrada Register Screena, Odabir Igrica i golova, HomeScreen i Profile
+
 Ernest Dudaković - Izrada Login Screena, Settings, Poruke i Donacije
