@@ -16,8 +16,8 @@
         <router-link to="/" class="text_color">Home</router-link> |
         <router-link to="/Login" class="text_color">Login</router-link> |
 
-        <router-link to="/Register" class="text_color">Register</router-link>
-        <a href="#" @click="logout()" class="nav-link">Logout</a>
+        <router-link to="/Register" class="text_color">Register</router-link> |
+        <a href="#" @click="logout()" class="text_color">Logout</a>
         &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;
         <!--easter egg ooops naso si me-->
