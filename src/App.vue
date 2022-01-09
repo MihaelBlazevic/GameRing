@@ -17,6 +17,7 @@
         <router-link to="/Login" class="text_color">Login</router-link> |
 
         <router-link to="/Register" class="text_color">Register</router-link>
+        <a href="#" @click="logout()" class="nav-link">Logout</a>
         &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;
         <!--easter egg ooops naso si me-->
@@ -27,6 +28,34 @@
     <router-view />
   </div>
 </template>
+
+<script>
+import { firebase } from "@/firebase";
+import LoginVue from "./views/Login.vue";
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    console.log("***", user.email);
+  } else {
+    console.log("No user");
+  }
+});
+
+export default {
+  setup() {},
+  methods: {
+    logout() {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          this.$router.push({ name: "Login" });
+        });
+    },
+  },
+};
+</script>
+
 
 <style lang="scss" >
 #app {
