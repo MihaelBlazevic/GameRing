@@ -1,29 +1,49 @@
 <template>
   <div id="app">
-    <!-- Image and text -->
-    <nav class="navbar navbar-light boja_nav outline">
-      <a class="navbar-brand" href="#">
-        &nbsp;&nbsp;&nbsp;
-        <img
-          src="@/assets/logo1.png"
-          width="auto"
-          height="50"
-          class="d-inline-block align-top"
-          alt=""
-        />
-      </a>
-      <div class="text_left text_color">
-        <router-link to="/" class="text_color">Home</router-link> |
-        <router-link to="/Login" class="text_color">Login</router-link> |
+    <nav class="navbar navbar-expand-lg navbar-light boja_nav outline">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          &nbsp;&nbsp;&nbsp;
+          <img
+            src="@/assets/logo1.png"
+            width="auto"
+            height="50"
+            class="d-inline-block align-top"
+            alt=""
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <router-link to="/Register" class="text_color">Register</router-link> |
-        <a href="#" @click="logout()" class="text_color">Logout</a>
-        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;
-        <!--easter egg ooops naso si me-->
-        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <router-link to="/" class="text_color">Home</router-link> |
+            </li>
+            <li class="nav-item">
+              <router-link to="/Login" class="text_color">Login</router-link> |
+            </li>
+            <li class="nav-item">
+              <router-link to="/Register" class="text_color"
+                >Register</router-link
+              >
+              |
+            </li>
+            <li class="nav-item">
+              <a href="#" @click="logout()" class="text_color">Logout</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div></div>
     </nav>
     <router-view />
   </div>
