@@ -99,8 +99,7 @@ body {
   background: #212042;
   color: #57557a;
 }
-.logo {
-}
+
 .mybutton {
   background-color: #42b983;
   &:hover {

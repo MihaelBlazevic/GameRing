@@ -15,8 +15,8 @@
         <button
           class="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown"
+          data-toggle="collapse"
+          data-target="#navbarNavDropdown"
           aria-controls="navbarNavDropdown"
           aria-expanded="false"
           aria-label="Toggle navigation"
@@ -27,19 +27,34 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <router-link to="/" class="text_color">Home</router-link> |
+              <router-link v-if="store.User" to="/" class="text_color px-2"
+                >Home</router-link
+              >
             </li>
             <li class="nav-item">
-              <router-link to="/Login" class="text_color">Login</router-link> |
+              <router-link
+                v-if="!store.User"
+                to="/Login"
+                class="text_color px-2"
+                >Login</router-link
+              >
             </li>
             <li class="nav-item">
-              <router-link to="/Register" class="text_color"
+              <router-link
+                v-if="!store.User"
+                to="/Register"
+                class="text_color px-2"
                 >Register</router-link
               >
-              |
             </li>
             <li class="nav-item">
-              <a href="#" @click="logout()" class="text_color">Logout</a>
+              <a
+                href="#"
+                v-if="store.User"
+                @click="logout()"
+                class="text_color px-2"
+                >Logout</a
+              >
             </li>
           </ul>
         </div>
@@ -52,16 +67,14 @@
 <script>
 import { firebase } from "@/firebase";
 import LoginVue from "./views/Login.vue";
-
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    console.log("***", user.email);
-  } else {
-    console.log("No user");
-  }
-});
+import store from "@/store.js";
 
 export default {
+  data() {
+    return {
+      store,
+    };
+  },
   setup() {},
   methods: {
     logout() {
@@ -72,6 +85,17 @@ export default {
           this.$router.push({ name: "Login" });
         });
     },
+  },
+  mounted() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        console.log("***", user.email);
+        store.User = user.email;
+      } else {
+        console.log("No user");
+        store.User = null;
+      }
+    });
   },
 };
 </script>
