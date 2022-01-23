@@ -50,6 +50,7 @@
 </template>
 <script>
 import { firebase } from "@/firebase";
+import store from "@/store.js";
 
 export default {
   email: "login",
@@ -68,8 +69,8 @@ export default {
         .signInWithEmailAndPassword(this.username, this.password)
         .then((result) => {
           console.log("Upsješna prijava", result);
-
-          this.$router.replace({ name: "Home" });
+          store.User = this.username;
+          this.$store.this.$router.replace({ name: "Home" });
         })
         .catch(function (e) {
           console.error("Greška", e);

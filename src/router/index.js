@@ -12,10 +12,11 @@ const routes = [
     component: Home,
     meta: {
       IsLogedin: true,
+      requiresAuth: true
     },
-    
+
   },
-  
+
   {
     path: '/Login',
     name: 'Login',
@@ -44,27 +45,16 @@ const router = new VueRouter({
   routes
 })
 
-setTimeout(() => {
-
-  router.beforeEach((to, from, next) => {
-    
-      
-    const NoLogon = store.User === null;
-
-    if (NoLogon && to.meta.IsLogedin) {
-      
-      console.log("Korsnik nije Loginan, Preusmjeravam na Login");
-      next("Login");
-    } else {
-      next();
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (store.User) {
+      next()
+      return
     }
-    if (!NoLogon && !to.meta.IsLogedin) {
-     
-      console.log(store.User);
-      next("Home");
-    }
-  
-  });
-},2000);
+    next({ name: 'Login' })
+  } else {
+    next()
+  }
+})
 
 export default router
