@@ -80,7 +80,9 @@ export default {
           .auth()
           .createUserWithEmailAndPassword(this.email, this.password)
           .then(function () {
-            console.log("Registered!");
+            console.log("Registered!").then(() => {
+              this.$router.replace({ name: "Homelog" });
+            });
           })
           .catch(function (error) {
             console.error("Error", error);

@@ -70,7 +70,7 @@ export default {
         .then((result) => {
           console.log("Upsješna prijava", result);
           store.User = this.username;
-          this.$store.this.$router.replace({ name: "Home" });
+          this.$router.replace({ name: "Homelog" });
         })
         .catch(function (e) {
           console.error("Greška", e);

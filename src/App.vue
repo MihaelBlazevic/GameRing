@@ -27,7 +27,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <router-link v-if="store.User" to="/" class="text_color px-2"
+              <router-link v-if="!store.User" to="/" class="text_color px-2"
                 >Home</router-link
               >
             </li>
@@ -45,6 +45,14 @@
                 to="/Register"
                 class="text_color px-2"
                 >Register</router-link
+              >
+            </li>
+            <li class="nav-item">
+              <router-link
+                v-if="store.User"
+                to="/Homelog"
+                class="text_color px-2"
+                >Homelog</router-link
               >
             </li>
             <li class="nav-item">
