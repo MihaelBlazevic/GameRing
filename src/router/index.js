@@ -26,6 +26,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue'),
     meta: {
       IsLogedin: false,
+      requiresAuth: false
     },
   },
   {
@@ -35,6 +36,7 @@ const routes = [
     component: () => import('../views/Register.vue'),
     meta: {
       IsLogedin: false,
+      requiresAuth: false
     },
   }
 ]
@@ -56,5 +58,7 @@ router.beforeEach((to, from, next) => {
     next()
   }
 })
+
+
 
 export default router
