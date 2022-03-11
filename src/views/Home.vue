@@ -3,10 +3,32 @@
     <div class="row">
       <div class="col-2"></div>
       <div class="col-8 pozadina razmak text_color">
-        <div class="container razmak">
-          WELCOME TO GAMERING
-          <div class="slika razmak"></div>
+        <div class="container razmak font-weight-bold">
+          <h1 class="sans">
+            WELCOME TO <span style="color: #ffffff">GAMERING</span>
+          </h1>
+          <div class="razmak"></div>
           <div class="wrap">
+            <div class="container razmak text_color">
+              <h5>
+                <span style="color: #ffffff">
+                  This site was created with the goal to be a platform for you
+                  to add all your gaming friends and be able to chat with them
+                  and see their gaming goals so you can find your perfect gaming
+                  buddy.</span
+                >
+              </h5>
+              <div class="container razmak">
+                <img class="m-4" src="@/assets/logo1.png" alt="logo" />
+              </div>
+              <h5>
+                <span style="color: #ffffff">
+                  Currently only 3 games will be supported but with future
+                  updates we are planning on adding more community favorite
+                  games.</span
+                >
+              </h5>
+            </div>
             <button
               type="button"
               onclick="location.href = '/register'"
@@ -57,24 +79,10 @@ export default {
   margin-bottom: 50px;
 }
 
-.text_color {
-  color: #42b983 !important;
-  font-weight: bold;
+.sans {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
-.slika {
-  background-color: #cccccc; /* Used if the image is unavailable */
-  height: 500px; /* You must set a specified height */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-}
-* {
-  outline: none;
-  margin: 0;
-  padding: 0;
-}
-html,
 body {
   height: 100%;
 }

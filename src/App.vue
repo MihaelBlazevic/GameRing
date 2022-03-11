@@ -56,6 +56,11 @@
               >
             </li>
             <li class="nav-item">
+              <router-link v-if="store.User" to="/News" class="text_color px-2"
+                >Gaming News</router-link
+              >
+            </li>
+            <li class="nav-item">
               <a
                 href="#"
                 v-if="store.User"
