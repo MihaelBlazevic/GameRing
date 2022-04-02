@@ -73,6 +73,14 @@
         </div>
       </div>
     </nav>
+     
+              <router-link
+                v-if="!store.User"
+                to="/Profile"
+                
+                ></router-link
+              >
+             
     <router-view />
   </div>
 </template>

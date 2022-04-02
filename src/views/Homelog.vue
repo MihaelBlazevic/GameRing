@@ -1,8 +1,25 @@
 <template>
-  <p>
-    <span>GameRing </span>
-  </p>
+<div class="container">
+<p>
+<span>GameRing</span>
+<a  class="btn btn-primary razmak stajl button" style="background-color: #42b983;" href="#!" role="button">
+  <i class="fas fa-user"></i>
+  Profile
+</a>
+   <br> 
+<a class="btn btn-primary razmak stajl button" style="background-color: #42b983;" href="#!" role="button">
+  <i class="far fa-comment-alt"></i>
+  Chat
+</a><br>
+<a class="btn btn-primary razmak stajl button" style="background-color: #42b983;" href="#!" role="button">
+  <i class="fas fa-cog"></i>
+  Settings
+</a>
+</p>
+
+</div>
 </template>
+
 
 
 <style lang="scss">
@@ -62,5 +79,22 @@ p {
   100% {
     background-position: 100% 50%;
   }
+}
+
+.stajl {
+    font-family: "Quicksand";
+    border-radius: 10px;
+    height: 50px;
+    width: 250px;
+    line-height: 2;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+.button:hover {color: #013220 }
+.button:active {
+  background-color: #3c824e;
+  box-shadow: 0 5px #666;
+  transform: translate(4px);
 }
 </style>
