@@ -1,26 +1,44 @@
 <template>
-<div class="container">
-<p>
-<span>GameRing</span>
-<a  class="btn btn-primary razmak stajl button" style="background-color: #42b983;" href="#!" role="button">
-  <i class="fas fa-user"></i>
-  Profile
-</a>
-   <br> 
-<a class="btn btn-primary razmak stajl button" style="background-color: #42b983;" href="#!" role="button">
-  <i class="far fa-comment-alt"></i>
-  Chat
-</a><br>
-<a class="btn btn-primary razmak stajl button" style="background-color: #42b983;" href="#!" role="button">
-  <i class="fas fa-cog"></i>
-  Settings
-</a>
-</p>
-
-</div>
+  <div class="container">
+    <p>
+      <span>GameRing</span>
+      <a
+        class="btn btn-primary razmak stajl button"
+        style="background-color: #42b983"
+        href="#!"
+        role="button"
+      >
+        <i class="fas fa-user"></i>
+        <router-link to="/Profile">Profile</router-link>
+      </a>
+      <br />
+      <a
+        class="btn btn-primary razmak stajl button"
+        style="background-color: #42b983"
+        href="#!"
+        role="button"
+      >
+        <i class="far fa-comment-alt"></i>
+        <router-link to="/Chat">Chat</router-link> </a
+      ><br />
+      <a
+        class="btn btn-primary razmak stajl button"
+        style="background-color: #42b983"
+        href="#!"
+        role="button"
+      >
+        <i class="fas fa-cog"></i>
+        <router-link to="/Settings">Settings</router-link>
+      </a>
+    </p>
+  </div>
 </template>
 
-
+<script>
+export default {
+  name: "Homelog",
+};
+</script>
 
 <style lang="scss">
 body {
@@ -82,19 +100,30 @@ p {
 }
 
 .stajl {
-    font-family: "Quicksand";
-    border-radius: 10px;
-    height: 50px;
-    width: 250px;
-    line-height: 2;
-    box-sizing: border-box;
-    font-size: 20px;
+  font-family: "Quicksand";
+  border-radius: 10px;
+  height: 50px;
+  width: 250px;
+  line-height: 2;
+  box-sizing: border-box;
+  font-size: 20px;
 }
 
-.button:hover {color: #013220 }
+.button:hover {
+  color: #013220;
+}
 .button:active {
   background-color: #3c824e;
   box-shadow: 0 5px #666;
   transform: translate(4px);
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
 }
 </style>
