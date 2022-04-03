@@ -1,31 +1,61 @@
 <template>
   <div class="cointainer">
-    <div class="container center razmak2 pozadina">
-      <div class="row">
-        <div class="col-lg razmak tekstljevo text_color">Username:</div>
+    <div class="row razmak">
+      <div class="col-lg-5"></div>
+      <div class="col-lg-1 pozadina">
+        <div class="wrapper pozadina">
+          <div class="box box2"></div>
+        </div>
       </div>
+      <div class="col-lg-5"></div>
+    </div>
+    <div class="container center pozadina">
       <div class="row">
-        <div class="col-lg razmak tekstljevo text_color">Age:</div>
+        <div class="col-lg"></div>
       </div>
 
       <div class="row">
-        <div class="col-lg razmak tekstljevo text_color">Country:</div>
+        <div class="col-lg razmak2 tekstljevo text_color">
+          Username:
+          <input
+            id="username"
+            placeholder="username"
+            class="popap"
+            style="display: none"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg razmak2 tekstljevo text_color">
+          Age:
+          <input
+            id="age"
+            placeholder="age"
+            class="popap"
+            style="display: none"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg razmak2 tekstljevo text_color">
+          Country:
+          <input
+            id="country"
+            placeholder="country"
+            class="popap"
+            style="display: none"
+          />
+        </div>
         <div class="row">
           <div class="col-lg">
             <a
-              class="btn btn-primary razmak stajl button"
+              class="btn btn-primary razmak2 stajl button"
               style="background-color: #42b983"
               href="#!"
               role="button"
+              onclick="myFunction()"
             >
-              <form>
-                <input
-                  type="submit"
-                  value="Add"
-                  @click.prevent="setProfile()"
-                  onsubmit="return false"
-                />
-              </form>
             </a>
           </div>
         </div>
@@ -78,6 +108,7 @@ export default {
           age: this.age,
           country: this.country,
         })
+
         .then((doc) => {
           console.log("Spremljeno! ", doc);
         })
@@ -89,9 +120,31 @@ export default {
 };
 </script>
 
+<script type="text/javascript">
+export default {
+  name: "Profile",
+  data: function () {
+    return {
+      Username: "",
+      Age: "",
+      Country: "",
+    };
+  },
+
+  methods: {
+    myFunction() {
+      console.log("prof");
+      document.querySelector("#username").style.display = "inline-block";
+      document.querySelector("#age").style.display = "inline-block";
+      document.querySelector("#country").style.display = "inline-block";
+    },
+  },
+};
+</script>
+
 <style lang="scss">
 .razmak2 {
-  margin: 150px;
+  margin: 25px;
 }
 
 .tekstljevo {
@@ -105,10 +158,30 @@ export default {
   transform: translateY(-50%);
 }
 
-.center {
-  margin: auto;
+.popap {
   width: 50%;
+  display: inline-block;
+}
 
-  padding: 10px;
+.center {
+  margin-top: 100px;
+}
+
+.box {
+  width: auto;
+  height: 100px;
+  background: white;
+}
+
+.box1 img {
+  object-fit: cover;
+}
+
+.box2 img {
+  object-fit: contain;
+}
+
+.box3 img {
+  object-fit: fill;
 }
 </style>
