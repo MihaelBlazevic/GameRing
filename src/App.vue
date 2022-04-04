@@ -73,14 +73,9 @@
         </div>
       </div>
     </nav>
-     
-              <router-link
-                v-if="!store.User"
-                to="/Profile"
-                
-                ></router-link
-              >
-             
+
+    <router-link v-if="!store.User" to="/Profile"></router-link>
+
     <router-view />
   </div>
 </template>
@@ -89,6 +84,7 @@
 import { firebase } from "@/firebase";
 import LoginVue from "./views/Login.vue";
 import store from "@/store.js";
+import router from "@/router";
 
 export default {
   data() {
@@ -96,7 +92,7 @@ export default {
       store,
     };
   },
-  setup() {},
+
   methods: {
     logout() {
       firebase
@@ -107,7 +103,11 @@ export default {
         });
     },
   },
-  mounted() {
+  created() {
+    const currentRoute = router.currentRoute;
+    setTimeout(() => {
+      console.log(store.User, "djiga");
+    }, 100);
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         console.log("***", user.email);
@@ -121,11 +121,7 @@ export default {
 };
 </script>
 
-
-<style lang="scss" >
-body {
-  background-color: #19123b;
-}
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -160,5 +156,3 @@ body {
   font-weight: bold;
 }
 </style>
-
-

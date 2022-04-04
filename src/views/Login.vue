@@ -70,6 +70,7 @@ export default {
         .then((result) => {
           console.log("Upsješna prijava", result);
           store.User = this.username;
+          console.log(store.User);
           this.$router.replace({ name: "Homelog" });
         })
         .catch(function (e) {
@@ -81,9 +82,6 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-  background-color: #19123b;
-}
 .razmak {
   margin-top: 50px;
 }

@@ -82,8 +82,4 @@ export default {
 .sans {
   font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
-
-body {
-  height: 100%;
-}
 </style>

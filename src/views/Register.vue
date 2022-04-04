@@ -63,6 +63,7 @@
 </template>
 <script>
 import { firebase } from "@/firebase";
+let db = firebase.firestore();
 
 export default {
   name: "Register",
@@ -74,7 +75,7 @@ export default {
     };
   },
   methods: {
-    register() {
+    async register() {
       if (this.password === this.passwordRepeat) {
         firebase
           .auth()
@@ -87,6 +88,9 @@ export default {
           .catch(function (error) {
             console.error("Error", error);
           });
+        await db.collection("Profile").doc("laximas1").set({
+          username: laximas1,
+        });
       } else {
         console.log("Repeatpassword not matching");
       }

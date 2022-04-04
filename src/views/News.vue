@@ -7,9 +7,5 @@
   ></iframe>
 </template>
 
-<style scoped>
-body {
-  background-color: #19123b;
-}
-</style>
+<style scoped></style>
 >

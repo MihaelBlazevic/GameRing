@@ -41,14 +41,6 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-  font: 400 1em/1.5 "Neuton";
-  background: #19123b;
-  color: rgba(255, 255, 255, 0.25);
-  text-align: center;
-  margin: 0;
-}
-
 p {
   text-transform: uppercase;
   letter-spacing: 0.5em;
