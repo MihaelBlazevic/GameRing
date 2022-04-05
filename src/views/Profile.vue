@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <div class="container razmak pozadina">
+      <div class="razmak sans naslov">Your Profile</div>
       <form>
         <div v-if="user" class="form-group razmak3">
           <label for="exampleInputusername">Username</label>
@@ -67,6 +68,7 @@
     <div class="container dirko">
       <div class="row">
         <div class="col-lg-3 pozadina">
+          <div class="razmak sans naslov">Apex Legends</div>
           <form v-if="userA">
             <div class="form-group razmak3">
               <label for="exampleInputusername">Username</label>
@@ -113,8 +115,13 @@
             </div>
           </form>
           <div v-if="!userA" class="form-group razmak3 text_color tekst">
-            Username : {{ usernameA }} Rank : {{ rankA }} Preference :
-            {{ preferenceA }}
+            Username : {{ usernameA }}
+          </div>
+          <div v-if="!userA" class="form-group razmak3 text_color tekst">
+            Rank : {{ rankA }}
+          </div>
+          <div v-if="!userA" class="form-group razmak3 text_color tekst">
+            Preference : {{ preferenceA }}
           </div>
           <div v-if="!userA" class="form-check razmak3">
             <button
@@ -128,6 +135,7 @@
         </div>
         <div class="col-lg-1"></div>
         <div class="col-lg-3 pozadina">
+          <div class="razmak sans naslov">League of Legends</div>
           <form v-if="userL">
             <div class="form-group razmak3">
               <label for="exampleInputusername">Username</label>
@@ -174,8 +182,13 @@
             </div>
           </form>
           <div v-if="!userL" class="form-group razmak3 text_color tekst">
-            Username : {{ usernameL }} Rank : {{ rankL }} Preference :
-            {{ preferenceL }}
+            Username : {{ usernameL }}
+          </div>
+          <div v-if="!userL" class="form-group razmak3 text_color tekst">
+            Rank : {{ rankL }}
+          </div>
+          <div v-if="!userL" class="form-group razmak3 text_color tekst">
+            Preference : {{ preferenceL }}
           </div>
           <div v-if="!userL" class="form-check razmak3">
             <button
@@ -190,6 +203,7 @@
 
         <div class="col-lg-1"></div>
         <div class="col-lg-3 pozadina">
+          <div class="razmak sans naslov">CSGO</div>
           <form v-if="userC">
             <div class="form-group razmak3">
               <label for="exampleInputusername">Username</label>
@@ -236,8 +250,13 @@
             </div>
           </form>
           <div v-if="!userC" class="form-group razmak3 text_color tekst">
-            Username : {{ usernameC }} Rank : {{ rankC }} Preference :
-            {{ preferenceC }}
+            Username : {{ usernameC }}
+          </div>
+          <div v-if="!userC" class="form-group razmak3 text_color tekst">
+            Rank : {{ rankC }}
+          </div>
+          <div v-if="!userC" class="form-group razmak3 text_color tekst">
+            Preference : {{ preferenceC }}
           </div>
           <div v-if="!userC" class="form-check razmak3">
             <button
@@ -494,5 +513,11 @@ export default {
 
 .dirko {
   margin-left: 50px;
+  margin-bottom: 50px;
+}
+.naslov {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
 }
 </style>
