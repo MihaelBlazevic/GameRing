@@ -75,6 +75,7 @@
     </nav>
 
     <router-link v-if="!store.User" to="/Profile"></router-link>
+    <router-link v-if="!store.User" to="/Finder"></router-link>
 
     <router-view />
   </div>

@@ -27,6 +27,14 @@
         href="#!"
         role="button"
       >
+        <router-link to="/Finder">Finder</router-link> </a
+      ><br />
+      <a
+        class="btn btn-primary razmak stajl button"
+        style="background-color: #42b983"
+        href="#!"
+        role="button"
+      >
         <i class="fas fa-cog"></i>
         <router-link to="/Settings">Settings</router-link>
       </a>
