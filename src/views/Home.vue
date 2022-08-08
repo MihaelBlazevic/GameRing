@@ -13,9 +13,8 @@
               <h5>
                 <span style="color: #ffffff">
                   This site was created with the goal to be a platform for you
-                  to add all your gaming friends and be able to chat with them
-                  and see their gaming goals so you can find your perfect gaming
-                  buddy.</span
+                  to see people gaming account information and their gaming
+                  goals so you can find your perfect gaming buddy.</span
                 >
               </h5>
               <div class="container razmak">
