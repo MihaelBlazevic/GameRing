@@ -9,8 +9,8 @@ Kolegij: Programsko inženjerstvo - https://www.notion.so/fiputreca/Programsko-i
 
 Mentor - doc. dr. sc. Nikola Tanković - https://www.notion.so/dr-sc-Nikola-Tankovi-875574d1b92248b1a8e90dae52cd29a9
 
-Aplikaciju će koristiti ljudi koji igraju video igrice i cilj im je nać prijatelje s kojima mogu igrati ili ljude ili ljude s kojima mogu pokušavati postići nešto više u igrici.
-Aplikacija će funkcionirati tako da obarete jednu od puneđih igrica, vaš ranking (podjela u igrici koja pokazuje koliko je tko dobar) i cilj (zabava, traženje prijatelja ili igranje sa ciljom poboljšanja u igrici te vam onda dodjeli ljude koji imaju slične ciljeve kao vi.
+GameRing je projekt koji smo odlučili napraviti. Aplikacija se koristi kao linkedin za video igrice. Preko aplikacije unosite vaše informacije za razne video igrice ( rank, ime u igri, cilj),
+najčešća uporaba bi bila da postavite vaš GameRing profil na razne komunikacijske platforme kao npr. Discord, Skype, Teamspeak, itd.. Tako da ljudi mogu vidjeti vaše iskustvo u određenim igricama.
 
 Link prototip - https://www.figma.com/proto/mh7XGdkdZN0AfnwLF0TTQT/GameRing-Prototip?page-id=0%3A1&node-id=10%3A36&viewport=247%2C48%2C0.39&scaling=scale-down&starting-point-node-id=10%3A36&show-proto-sidebar=1
 
