@@ -80,17 +80,13 @@ export default {
         firebase
           .auth()
           .createUserWithEmailAndPassword(this.email, this.password)
-          .then(function () {
-            console.log("Registered!").then(() => {
-              this.$router.replace({ name: "Homelog" });
-            });
+          .then(() => {
+            console.log("Registered!");
+            this.$router.replace({ name: "Homelog" });
           })
           .catch(function (error) {
             console.error("Error", error);
           });
-        await db.collection("Profile").doc("laximas1").set({
-          username: laximas1,
-        });
       } else {
         console.log("Repeatpassword not matching");
       }
