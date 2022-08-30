@@ -9,7 +9,11 @@
         Reset password
       </button>
     </div>
-    <form>
+    <form
+      action="mailto:mihael.blazevic75@gmail.com"
+      method="post"
+      enctype="text/plain"
+    >
       <div class="container razmak pozadina">
         <h1 class="sans text_color">Contact Us</h1>
         <br />

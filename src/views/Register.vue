@@ -24,7 +24,9 @@
             <div class="form-group">
               <label class="text_color" for="exampleInputPassword1"
                 >Password <br />
-                <br /><br
+                (Minimum 6 letters)
+                <br />
+                <br
               /></label>
 
               <input
@@ -72,6 +74,7 @@ export default {
       password: "",
       passwordRepeat: "",
       email: "",
+      passwordError: "",
     };
   },
   methods: {
@@ -90,6 +93,12 @@ export default {
       } else {
         console.log("Repeatpassword not matching");
       }
+    },
+    passworde() {
+      this.passwordError =
+        this.password.length > 5
+          ? ""
+          : "password must be at least 6 chars long";
     },
   },
 };
