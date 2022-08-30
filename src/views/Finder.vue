@@ -13,6 +13,7 @@
         placeholder="Enter the email of the user you wish to see."
       />
     </div>
+    <br />
     <button type="button" @click="searchUser()" class="btn mybutton">
       Search
     </button>
