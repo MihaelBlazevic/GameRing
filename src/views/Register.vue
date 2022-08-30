@@ -24,7 +24,7 @@
             <div class="form-group">
               <label class="text_color" for="exampleInputPassword1"
                 >Password <br />
-                (minimum 6 letters )<br /><br
+                <br /><br
               /></label>
 
               <input
@@ -115,8 +115,7 @@ body {
   background: #212042;
   color: #57557a;
 }
-.logo {
-}
+
 .mybutton {
   background-color: #42b983;
   &:hover {

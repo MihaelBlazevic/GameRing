@@ -107,7 +107,7 @@ export default {
   created() {
     const currentRoute = router.currentRoute;
     setTimeout(() => {
-      console.log(store.User, "djiga");
+      console.log(store.User);
     }, 100);
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
