@@ -9,6 +9,43 @@
         Reset password
       </button>
     </div>
+    <form>
+      <div class="container razmak pozadina">
+        <label for="email">Email</label>
+        <br />
+        <input
+          type="text"
+          id="email"
+          name="email"
+          placeholder="Used email or your account"
+          required
+        />
+        <br />
+        <label for="Topic">Topic</label>
+        <br />
+        <input
+          type="text"
+          id="Topic"
+          name="Topic"
+          placeholder="Area of your problem"
+          required
+        />
+        <br />
+        <label for="subject">Explanation</label>
+        <br />
+        <textarea
+          id="subject"
+          name="_subject"
+          placeholder="Tell us more.."
+          style="height: 200px"
+          required
+        ></textarea>
+        <br />
+        <button type="button" @click="ocisti()" class="btn mybutton">
+          Submit
+        </button>
+      </div>
+    </form>
   </div>
 </template>
 
@@ -34,6 +71,12 @@ export default {
           // ..
         });
     },
+    ocisti() {
+      document.getElementById("email").value = "";
+      document.getElementById("Topic").value = "";
+      document.getElementById("subject").value = "";
+    },
+    sendemail() {},
   },
 };
 </script>
@@ -41,5 +84,26 @@ export default {
 <style>
 .razmacic {
   margin: 50px;
+}
+input[type="text"],
+select,
+textarea {
+  width: 50%; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+
+  padding: 20px;
 }
 </style>
