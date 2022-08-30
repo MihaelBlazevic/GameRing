@@ -38,7 +38,7 @@
           <div class="razmak sans naslov">Apex Legends</div>
 
           <div v-if="!userA" class="form-group razmak3 text_color tekst">
-            Username : {{ usernameA }}
+            Username : {{ usernamerA }}
           </div>
           <div v-if="!userA" class="form-group razmak3 text_color tekst">
             Rank : {{ rankA }}
@@ -112,7 +112,6 @@ export default {
     };
   },
   mounted() {
-    this.getProfile();
     this.getApex();
     this.getLoL();
     this.getCSGO();
@@ -148,7 +147,7 @@ export default {
         .get()
         .then((doc) => {
           if (doc.exists) {
-            this.usernameA = doc.data().username;
+            this.usernamerA = doc.data().username;
             this.rankA = doc.data().rank;
             this.preferenceA = doc.data().preference;
           } else {

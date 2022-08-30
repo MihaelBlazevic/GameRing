@@ -73,7 +73,7 @@
             <div class="form-group razmak3">
               <label for="exampleInputusername">Username</label>
               <input
-                v-model="usernameA"
+                v-model="usernamerA"
                 type="text"
                 class="form-control"
                 id="exampleInputusername"
@@ -115,7 +115,7 @@
             </div>
           </form>
           <div v-if="!userA" class="form-group razmak3 text_color tekst">
-            Username : {{ usernameA }}
+            Username : {{ usernamerA }}
           </div>
           <div v-if="!userA" class="form-group razmak3 text_color tekst">
             Rank : {{ rankA }}
@@ -334,7 +334,7 @@ export default {
         .get()
         .then((doc) => {
           if (doc.exists) {
-            this.usernameA = doc.data().username;
+            this.usernamerA = doc.data().username;
             this.rankA = doc.data().rank;
             this.preferenceA = doc.data().preference;
           } else {
@@ -404,7 +404,7 @@ export default {
       db.collection("Apex")
         .doc(store.User)
         .set({
-          username: this.usernameA,
+          username: this.usernamerA,
           rank: this.rankA,
           preference: this.preferenceA,
         })
