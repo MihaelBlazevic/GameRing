@@ -105,6 +105,10 @@ export default {
     },
   },
   created() {
+    window.addEventListener("beforeunload", function () {
+      window.localStorage.clear();
+    });
+
     const currentRoute = router.currentRoute;
     setTimeout(() => {
       console.log(store.User);
