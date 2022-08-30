@@ -11,7 +11,9 @@
     </div>
     <form>
       <div class="container razmak pozadina">
-        <label for="email">Email</label>
+        <h1 class="sans text_color">Contact Us</h1>
+        <br />
+        <label for="email" class="text_color">Email</label>
         <br />
         <input
           type="text"
@@ -21,7 +23,7 @@
           required
         />
         <br />
-        <label for="Topic">Topic</label>
+        <label for="Topic" class="text_color">Topic</label>
         <br />
         <input
           type="text"
@@ -31,7 +33,7 @@
           required
         />
         <br />
-        <label for="subject">Explanation</label>
+        <label for="subject" class="text_color">Explanation</label>
         <br />
         <textarea
           id="subject"
