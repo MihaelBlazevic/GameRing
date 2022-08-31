@@ -9,11 +9,7 @@
         Reset password
       </button>
     </div>
-    <form
-      action="mailto:mihael.blazevic75@gmail.com"
-      method="post"
-      enctype="text/plain"
-    >
+    <form ref="form" @submit.prevent="sendEmail">
       <div class="container razmak pozadina">
         <h1 class="sans text_color">Contact Us</h1>
         <br />
@@ -22,7 +18,7 @@
         <input
           type="text"
           id="email"
-          name="email"
+          name="user_email"
           placeholder="Used email or your account"
           required
         />
@@ -41,21 +37,20 @@
         <br />
         <textarea
           id="subject"
-          name="_subject"
+          name="subject"
           placeholder="Tell us more.."
           style="height: 200px"
           required
         ></textarea>
         <br />
-        <button type="button" @click="ocisti()" class="btn mybutton">
-          Submit
-        </button>
+        <input type="submit" value="Send" class="btn mybutton" />
       </div>
     </form>
   </div>
 </template>
 
 <script>
+import emailjs from "@emailjs/browser";
 import { firebase } from "@/firebase";
 import store from "@/store.js";
 
@@ -82,7 +77,24 @@ export default {
       document.getElementById("Topic").value = "";
       document.getElementById("subject").value = "";
     },
-    sendemail() {},
+    sendEmail() {
+      emailjs
+        .sendForm(
+          "service_ixqyff9",
+          "template_oe2ev8f",
+          this.$refs.form,
+          "VUTMjeDEZMfV03Z9x"
+        )
+        .then(
+          (result) => {
+            console.log("SUCCESS!", result.text);
+            this.ocisti();
+          },
+          (error) => {
+            console.log("FAILED...", error.text);
+          }
+        );
+    },
   },
 };
 </script>
