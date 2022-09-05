@@ -82,10 +82,12 @@
 </template>
 
 <script>
+// importovi
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import store from "@/store.js";
+// daje pristup database na firebaseu
 let db = firebase.firestore();
 
 export default {
@@ -111,6 +113,7 @@ export default {
       userC: false,
     };
   },
+
   mounted() {
     this.getApex();
     this.getLoL();
@@ -118,11 +121,13 @@ export default {
   },
 
   methods: {
+    //trazi usera preko upisanog emaila te ako nade upise njegove podatke u polja gdje treba
     searchUser() {
       var docRef = db.collection("Profile").doc(this.search);
       docRef
         .get()
         .then((doc) => {
+          // ako trazeni user postoji u colletionu "Profile" ispise njegove podatke pomocu funkcija   this.getApex(); ,this.getLoL(); , this.getCSGO(); i
           if (doc.exists) {
             console.log(doc.data());
             this.usernamer = doc.data().username;
@@ -140,7 +145,7 @@ export default {
       this.getLoL();
       this.getCSGO();
     },
-
+    //citanje informacija iz collection "Apex"
     getApex() {
       var docRef = db.collection("Apex").doc(this.search);
       docRef
@@ -159,6 +164,7 @@ export default {
           console.log("Error getting document:", error);
         });
     },
+    //citanje informacija iz collection "LoL"
     getLoL() {
       var docRef = db.collection("LoL").doc(this.search);
       docRef
@@ -177,6 +183,7 @@ export default {
           console.log("Error getting document:", error);
         });
     },
+    //citanje informacija iz collection "CSGO"
     getCSGO() {
       var docRef = db.collection("CSGO").doc(this.search);
       docRef

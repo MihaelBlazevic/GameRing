@@ -13,12 +13,12 @@
       <div class="container razmak pozadina">
         <h1 class="sans text_color">Contact Us</h1>
         <br />
-        <label for="email" class="text_color">Email</label>
+        <label for="email" class="text_color">email</label>
         <br />
         <input
           type="text"
           id="email"
-          name="user_email"
+          name="email"
           placeholder="Used email or your account"
           required
         />
@@ -61,6 +61,7 @@ export default {
     passwordReset() {
       firebase
         .auth()
+        //runa command i salje email na mail zapamcenog usera da reseta passowrd
         .sendPasswordResetEmail(store.User)
         .then(() => {
           // Password reset email sent!
@@ -72,6 +73,7 @@ export default {
           // ..
         });
     },
+    //mice napisene stvari sa forme
     ocisti() {
       document.getElementById("email").value = "";
       document.getElementById("Topic").value = "";
@@ -85,6 +87,7 @@ export default {
           this.$refs.form,
           "VUTMjeDEZMfV03Z9x"
         )
+        //ako id-evi matchaju runa se funkcija ocisti i salje mail preko emailjs-a
         .then(
           (result) => {
             console.log("SUCCESS!", result.text);

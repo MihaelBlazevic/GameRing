@@ -66,13 +66,17 @@ export default {
 
       firebase
         .auth()
+        // provjerava informacije u .auth dali userpostoji te ako da nas signina
         .signInWithEmailAndPassword(this.username, this.password)
         .then((result) => {
           console.log("Upsješna prijava", result);
+          //pamti email registriranog usera
           store.User = this.username;
           console.log(store.User);
+          //vodi na page Homelog
           this.$router.replace({ name: "Homelog" });
         })
+        //ispis greške u slučaju neuspjeha
         .catch(function (e) {
           console.error("Greška", e);
         });

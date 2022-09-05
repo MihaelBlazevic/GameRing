@@ -95,6 +95,7 @@ export default {
   },
 
   methods: {
+    //ako na navbaru klinemo logout preko firebase commanda signOut odlogira usera i odvede ga na Home
     logout() {
       firebase
         .auth()

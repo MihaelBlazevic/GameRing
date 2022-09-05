@@ -21,6 +21,7 @@
               />
             </div>
             <br />
+
             <div class="form-group">
               <label class="text_color" for="exampleInputPassword1"
                 >Password <br />
@@ -82,6 +83,7 @@ export default {
       if (this.password === this.passwordRepeat) {
         firebase
           .auth()
+          //pomucu firebase commande kreira novog usera u auth samo ako se password i passwordrepeat podudaraju
           .createUserWithEmailAndPassword(this.email, this.password)
           .then(() => {
             console.log("Registered!");
@@ -94,6 +96,7 @@ export default {
         console.log("Repeatpassword not matching");
       }
     },
+    //nece registrirati ako lozinka nije duza od 5 slova
     passworde() {
       this.passwordError =
         this.password.length > 5
