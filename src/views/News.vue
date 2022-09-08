@@ -1,8 +1,8 @@
 <template>
   <iframe
-    width="85%"
+    width="1500"
     height="1600"
-    src="https://rss.app/embed/v1/wall/tzVX9MXe6vmQ8b7k"
+    src="https://rss.app/embed/v1/wall/t5SQLLRajAfyT24e"
     frameborder="0"
   ></iframe>
 </template>
